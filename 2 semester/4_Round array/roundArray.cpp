@@ -6,13 +6,17 @@ int main() {
     const int N = 20;
     int fN = N; // fake N - для "удаления" элементов из массива
     int a[N];
-    int k = 3;
+    int k = 10;
     srand(time(NULL));
+    setlocale(LC_ALL, "Russian");
+    cout << "Исходный массив: ";
     for (int i=0; i<N; i++) {
         a[i] = rand() % 101 - 50;
+        cout << a[i] << ' ';
     }
+    cout << '\n';
     // циклический вывод
-    for (int i=k; i<=(k+1+fN); i++) {
+    for (int i=k+fN; i>k; i--) {
         cout << a[i%fN] << ' ';
     }
     cout << '\n';
@@ -26,6 +30,11 @@ int main() {
             j--;
         }
     }
+    cout << "По убыванию: ";
+    for (int i=0; i<fN; i++) {
+        cout << a[i] << ' ';
+    }
+    cout << '\n';
     // удаление нечётных элементов
     int cor = 0;
     for (int i=0; i<N; i++) {
@@ -38,7 +47,12 @@ int main() {
             cor--;
         }
     }
-    for (int i=k; i<=(k+1+fN); i++) {
+    cout << "Без нечётных: ";
+    for (int i=0; i<fN; i++) {
+        cout << a[i] << ' ';
+    }
+    cout << '\n';
+    for (int i=k+fN; i>k; i--) {
         cout << a[i%fN] << ' ';
     }
     cout << '\n';
