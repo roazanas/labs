@@ -2,7 +2,7 @@
 #include <ctime>
 using namespace std;
 
-int main(){
+int main() {
     srand(time(NULL));
     const int N = 10000;
     int max, S, j;
